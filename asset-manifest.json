@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.js": "/react-add-user/static/js/main.eb9cb9fb.chunk.js",
+    "main.js.map": "/react-add-user/static/js/main.eb9cb9fb.chunk.js.map",
+    "runtime-main.js": "/react-add-user/static/js/runtime-main.eed7f9b5.js",
+    "runtime-main.js.map": "/react-add-user/static/js/runtime-main.eed7f9b5.js.map",
+    "static/js/2.a65596ac.chunk.js": "/react-add-user/static/js/2.a65596ac.chunk.js",
+    "static/js/2.a65596ac.chunk.js.map": "/react-add-user/static/js/2.a65596ac.chunk.js.map",
+    "index.html": "/react-add-user/index.html",
+    "static/js/2.a65596ac.chunk.js.LICENSE.txt": "/react-add-user/static/js/2.a65596ac.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.eed7f9b5.js",
+    "static/js/2.a65596ac.chunk.js",
+    "static/js/main.eb9cb9fb.chunk.js"
+  ]
+}
