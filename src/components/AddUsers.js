@@ -20,17 +20,11 @@ const useStyles = makeStyles({
 
 
 
-const AddUser = () => {
+const AddUser = ({ onAddUser, userList }) => {
   const classes= useStyles();
   const [enteredUser,setEnteredUser] = useState('');  
   const [enteredAge,setEnteredAge] = useState('');
-  const [userList, setUserList]= useState([]);
 
-  const addUserHandler=(uName, uAge)=>{
-    setUserList((prevState)=>{
-      return [ ...prevState, {userName: uName, userAge: uAge} ];
-    });
-  }
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -42,17 +36,16 @@ const AddUser = () => {
     ) {
       return;
     }
-    addUserHandler(enteredUser, enteredAge);
-    // if (enteredUser && enteredAge) {
-    //   fetch("https://sheet.best/api/sheets/a9cf3e8c-eb23-489d-9ce5-4681694b18ed", {
-    //     method: "POST",
-    //     mode: "cors",
-    //     headers: {"Content-type": "application/json"},
-    //     body: JSON.stringify(userList)
-    //   })
-    // } 
+    onAddUser(enteredUser, enteredAge);
+    if (enteredUser && enteredAge) {
+      fetch("https://sheet.best/api/sheets/a9cf3e8c-eb23-489d-9ce5-4681694b18ed", {
+        method: "POST",
+        mode: "cors",
+        headers: {"Content-type": "application/json"},
+        body: JSON.stringify({ ID: userList.length + 1, userName: enteredUser, userAge: enteredAge })
+      })
+    } 
     
-  console.log(enteredUser, enteredAge , userList);
   setEnteredAge('');
   setEnteredUser('');
   }
