@@ -1,9 +1,15 @@
-import React from 'react';
+import React ,{useEffect} from 'react';
 import {Container, Grid } from '@material-ui/core';
 import UserCard from "./UserCard";
 
 
 const UserList = ({ userList, UserListHandler}) => {
+
+  useEffect(() => {
+    fetch('https://sheet.best/api/sheets/421cbf0b-e884-425d-ad23-e7d658c2f851')
+      .then(res => res.json())
+      .then(data => UserListHandler(data))
+  }, [])
 
   const handleDelete = async (ID) => {
     await fetch(`https://sheet.best/api/sheets/421cbf0b-e884-425d-ad23-e7d658c2f851/${ID-1}`, {

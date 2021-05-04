@@ -24,8 +24,8 @@ const UserCard = ({user, handleDelete}) => {
               <DeleteOutlined />
             </IconButton>
           }
-          title={<Typography>姓名 {user.userName}</Typography>}
-          subheader={<Typography color="textSecondary">年紀 {user.userAge}</Typography>}
+          title={<Typography>姓名: {user.userName}</Typography>}
+          subheader={<Typography color="textSecondary">年紀: {user.userAge}</Typography>}
         />
         
       </Card>
