@@ -12,9 +12,15 @@ const UserList = ({ userList, UserListHandler}) => {
   }, [])
 
   const handleDelete = async (ID) => {
-    await fetch(`https://sheet.best/api/sheets/421cbf0b-e884-425d-ad23-e7d658c2f851/${ID-1}`, {
+    await fetch(`https://sheet.best/api/sheets/421cbf0b-e884-425d-ad23-e7d658c2f851/ID/${ID}`, {
       method: 'DELETE'
-    })
+    }).then((response) => response.json())
+      .then((data) => {
+        console.log(data);
+      })
+      .catch((error) => {
+        console.error(error);
+      });
     const newUserLists = userList.filter(user => user.ID !== ID)
     UserListHandler(newUserLists);
   }

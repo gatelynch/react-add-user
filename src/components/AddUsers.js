@@ -42,7 +42,7 @@ const AddUser = ({ onAddUser, userList }) => {
         method: "POST",
         mode: "cors",
         headers: {"Content-type": "application/json"},
-        body: JSON.stringify({ ID: userList.length + 1, userName: enteredUser, userAge: enteredAge })
+        body: JSON.stringify({ ID: Math.random().toString(), userName: enteredUser, userAge: enteredAge })
       })
     } 
     
