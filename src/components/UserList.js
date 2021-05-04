@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card, Container, Grid } from '@material-ui/core';
+import {Container, Grid } from '@material-ui/core';
 import UserCard from "./UserCard";
 
 
@@ -9,7 +9,7 @@ const UserList = ({ userList, UserListHandler}) => {
     await fetch(`https://sheet.best/api/sheets/421cbf0b-e884-425d-ad23-e7d658c2f851/${ID-1}`, {
       method: 'DELETE'
     })
-    const newUserLists = userList.filter(user => user.ID != ID)
+    const newUserLists = userList.filter(user => user.ID !== ID)
     UserListHandler(newUserLists);
   }
 
